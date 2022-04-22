@@ -1,7 +1,0 @@
-1. git add .
-2. git commit -m "isi comment"
-3. git push 
-
-note :
-1. jika ada anggota yang melakukan push, jangan lupa melakukan git pull ketika anda ingin melakukan push.
-2. bagi yang baru pertama kali melakukan push gunakan git push -u origin main
