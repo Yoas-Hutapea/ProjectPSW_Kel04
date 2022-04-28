@@ -20,7 +20,7 @@
 
 </head>
 
-<body style="background-image: url(image/bgindex.jpg); background-size: cover;">
+<body style="background-image: url(image/bgpadi.jpg); background-size: cover; background-repeat: no-repeat;">
 
   <div class="site-wrap">
 
@@ -81,7 +81,7 @@
 
          <div class="row align-items-center justify-content-center">
               <div class="col-md-7  text-center" >
-                <h1 style="color:black;">Selamat datang di Lelang Sukses </h1>
+                <h1 style="color:black;"><strong>Selamat datang di Lelang Sukses<strong> </h1>
                 <p  style="color:black;">Kami menyediakan padi berkualitas Silahkan mendaftar di link dibawah ini.....</p>
                 <p><a href="register.php" class="btn btn-primary">Register</a></p>
               </div>

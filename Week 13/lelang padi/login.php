@@ -6,11 +6,11 @@
 </head>
   <body>
   <div class="login-page">
-  <div class="form">
+  <div class="form" style="border-radius:10px;">
     <form class="login-form">
         <h2>Login</h2>
-      <input type="text" placeholder="Email"/>
-      <input type="password" placeholder="password"/>
+      <input type="email" placeholder="Email" required style="border-radius:30px;"/>
+      <input type="password" placeholder="password" required style="border-radius:30px;"/>
       <button>login</button>
       <p class="message">Belum punya akun? <a href="register.php">Register here</a></p>
     </form>
