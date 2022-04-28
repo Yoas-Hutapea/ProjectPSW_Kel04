@@ -43,13 +43,16 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li>
-                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold"> Home </a>
+                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black"> Home </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold">Product Lelang</a>
+                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Daftar Product Lelang</a>
                 </li>                                
                 <li>
-                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold">Review</a>
+                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Product Lelang</a>
+                </li>
+                <li>
+                <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Review</a>
                 </li>
                 </ul>                                                                
             </nav>
@@ -58,7 +61,7 @@
           <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li ml-auto>
-                <a href="login.php"class="nav-link text-right " style="font-size:20px;font-weight:bold" >Login </a>
+                <a href="login.php"class="nav-link text-right " style="font-size:20px;font-weight:bold;color:black" >Login </a>
                 </li>
                 </ul>
          </div>
@@ -78,8 +81,8 @@
 
          <div class="row align-items-center justify-content-center">
               <div class="col-md-7  text-center" >
-                <h1 style="color:white;">Selamat datang di Lelang Sukses </h1>
-                <p  style="color:white;">Kami menyediakan padi berkualitas Silahkan mendaftar di link dibawah ini.....</p>
+                <h1 style="color:black;">Selamat datang di Lelang Sukses </h1>
+                <p  style="color:black;">Kami menyediakan padi berkualitas Silahkan mendaftar di link dibawah ini.....</p>
                 <p><a href="register.php" class="btn btn-primary">Register</a></p>
               </div>
             </div>

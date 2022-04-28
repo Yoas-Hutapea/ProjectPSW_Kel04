@@ -17,7 +17,7 @@
       <input type="text" placeholder="Password"/>
       <input type="password" placeholder="Konfirmasi Password"/>
       <button>Register Here</button>
-      <p class="message">Sudah punya akun ? <a href="login.php">Register here</a></p>
+      <p class="message">Sudah punya akun ? <a href="login.php">Login here</a></p>
     </form>
   </div>
 </div>
