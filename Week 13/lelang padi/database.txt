@@ -1,5 +1,5 @@
-Create Database lelang_padi;
-Create Table role(
+Create Database lelang_padi;          --> 1.Masukan ke query new
+Create Table role(                    --> 2 Select dulu databasenya lalu masukan yang create table nya
 id INT NOT NULL AUTO_INCREMENT,
 rele_name VARCHAR(250),
 PRIMARY KEY (id)
@@ -14,5 +14,5 @@ alamat Varchar(250),
 PASSWORD Varchar(250),
 role_id int,
 PRIMARY KEY(id),
-FOREIGN KEY (role_id) REFREANCES role(id)
+FOREIGN KEY (role_id) REFERENCES role(id)
 )
