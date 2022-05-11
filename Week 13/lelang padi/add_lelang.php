@@ -25,7 +25,6 @@
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 <style>
-<style>
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
