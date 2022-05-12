@@ -1,42 +1,54 @@
-<!doctype html>
+<?php
+session_start();
+include 'connect.php';
+require_once("function.php");
+?>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Website &mdash; Lelang Padi</title>
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-  	<link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
-	<!-- Css -->
-	<link rel="stylesheet" href="css/owl.theme.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-
-
-	<!-- jS -->
-	<script src="js/jquery.min.js" type="text/javascript"></script>
-	<script src="js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="js/main.js" type="text/javascript"></script>
-
-
+  <title>Website &mdash; Lelang Padi</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
 	<style>
-
-.container{
-  border-color:black;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.header {
+
+.topnav {
   overflow: hidden;
   background-color: #F9F3D3;
   padding:20px;
 }
-footer{
-  overflow: hidden;
-  background-color: #F9F3D3;
-  padding: 20px;
-}
 
-.header .a {
+.topnav .a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
   color: black;
   text-align: center;
   padding: 9px;
@@ -50,39 +62,103 @@ footer{
   margin-left:20px;
   margin-right:20px;
 }
-.header .a:hover {
+.topnav .right {
+float:right;   
+}
+.container{
+  margin-left:40px;
+  margin-right:40px;
+
+}
+/* Dropdown Button */
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+.topnav .a:hover {
   background-color: #FCB346;
   color: white;
 }
 
-.header a.active {
+.topnav .a.active {
   background-color: #FCB346;
   color: white;
 }
 
-.header-center {
-  display: flex;
-   justify-content: center;
-       
-}
-.header-right {
-float:right;    
-}
-.header a.logo {
-  float:left;
+.topnav .icon {
+  display: none;
 }
 
-@media screen and (max-width: 500px) {
-  .header a {
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: left;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
+    border-radius: 0px;
   }
-  
-  .header-center {
-    float: none;
+  .topnav.responsive .navbar-brand{
+    display:none;
   }
 }
+@media screen and (max-width: 600px) {
+  .cd {
+    display: none;
+  }
+}
+
+
+
+
   </style>	
 
 </head>
@@ -91,42 +167,26 @@ float:right;
 
 <!-- TOP HEADER Start
     ================================================== -->
-	
-	<div class="container">
-<div class="header"><br>
-          <a class="logo"href="index.php"> <img src="image/logo.png" alt="Image"  style="width:30%;"> </a> </img>
-<div class="header-right">
-<div class="dropdown">
-  <button class="btn btn-primary" type="button" data-toggle="dropdown" style="font-size:15px;" aria-haspopup="true" aria-expanded="false">User
-  <i class="fas fa-user-circle" style="font-size:15px;"></i>
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li style="font-size:11px;"><a href="#">Profile</a></li>
-    <li style="font-size:11px;"><a href="#">Logout</a></li> </ul>
-</div>
-</div>
-  <div class="header-center">
-    
-    <a class="a active" href="home.php">Home</a>
-    <a class="a" href="daftar_product.php">Daftar Produk Lelang</a>
-    <a class="a" href="add_lelang.php">Produk Lelang</a>
-    <a class="a" href="look_review.php">Review</a>
-    
-</div>
-</div>
-
+<div class="container">	
+	<?php
+if($_SESSION["role_id"] == '1'){
+  header_s();
+};
+if($_SESSION["role_id"] == '2'){
+  header_t();
+};
+?>
+<br>
+<br>
+<br>
+<br>
 <br>
 	<!-- End Of /.Container -->
 
 <!-- Username display start -->
 	<div class="container-fluid">
-		<div class="alert alert-warning alert-dismissible fade show" role="alert">
- 			<strong>Hello </strong> [Username] !
-  				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    				<span aria-hidden="true">&times;</span>
-  				</button>
-		</div>
-	</div> <br>
+	 <?php echo $_SESSION['name']?>
+	</div> 
 <!-- Username display End -->
 
 <!-- About website brief start -->
@@ -275,20 +335,11 @@ float:right;
 <br>
 <!-- Footer End -->
 
-	<footer> 
-<div class="container">
-  <div class="row">
-    <div class="col">
-    <p style="margin-top:20px;text-align:center;">Copyright © startend 2022 | All right Deserve </p>
-    </div>
-    <div class="col col-lg-2">
-    <a class="social-media-icon" href="https://link_social_mendia_anda"><span class="fab fa-facebook"> Facebook</span></a><br>
-    <a class="social-media-icon" href="https://link_social_mendia_anda"><span class="fab fa-instagram"> Instagram</span></a><br>
-    <a class="social-media-icon" href="https://link_social_mendia_anda"><span class="fab fa-facebook"> Facebook</span></a><br>
-    </div>
-  </div>
-</div>
+<?php
+footer_y();
+?>
 </footer>
+<div class="container">	
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

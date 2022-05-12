@@ -22,7 +22,6 @@ $roles = mysqli_query($koneksi,$query);
   <div class="form" style="border-radius:10px;">
     <form class="login-form" method="POST" action="getData.php" id="form">
       <h2>Register Here</h2>
-      <input name="tujuan" type="hidden" value="DAFTAR" >
       <input type="text"required placeholder="Nama Lengkap" name="nama"
                       oninvalid="this.setCustomValidity('Masukkan nama anda')"
                       oninput="this.setCustomValidity('')"style="border-radius:30px;"/>
@@ -44,11 +43,11 @@ $roles = mysqli_query($koneksi,$query);
       <input type="password" placeholder="Konfirmasi Password" name="confirmPassword" id="confirmPassword"
                       oninput="this.setCustomValidity('')"style="border-radius:30px;"/> <br>
                       <label for="role">Pilih role</label>
-                  <select style="margin:5px;"class="custom-select" name="role" id="role"> 
-                  <option not selected>Pilih Role </option>
+                  <select style="margin:5px;"class="custom-select" name="role" id="role" required> 
+                  <option value="">Pilih Role </option>
                   <?php while($x = mysqli_fetch_array($roles)){
                     $id = $x["id"];
-                    $role = $x["role_name"]
+                    $role = $x["role_name"];
 
  ?>
                    <option value="<?php echo $id ?>"><?php echo $role ?></option>
@@ -114,7 +113,9 @@ $roles = mysqli_query($koneksi,$query);
         confirmPassword: {
           required: true,
           equalTo: "#password"
-        }
+        },
+        role: { valueNotEquals: "default",
+                required:true }
       },
       messages: {
         nama: 'Tolong isi Nama Lengkap Anda',
@@ -141,7 +142,9 @@ $roles = mysqli_query($koneksi,$query);
         confirmPassword: {
           required: 'Please enter Confirm Password.',
           equalTo: 'Tidak Sama dengan Password',
-        }
+        },
+        role: { valueNotEquals: 'Pilih role', 
+                required: 'pilih role',}
       },
       submitHandler: function (form) {
         form.submit();

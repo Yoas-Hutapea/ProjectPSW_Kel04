@@ -1,3 +1,6 @@
+<?php
+include_once("function.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +65,7 @@ float:right;
 }
 .container{
   margin-top:50px;
-  margin-bottom:50px;
+  margin-bottom:150px;
 }
 /* Dropdown Button */
 .dropbtn {
@@ -156,27 +159,9 @@ float:right;
 </head>
 <body>
 
-<div class="topnav" id="myTopnav">
-<div class="right">
-<div class="dropdown">
-  <button class="btn btn-primary " type="button" data-toggle="dropdown" style="font-size:15px;" aria-haspopup="true" aria-expanded="false">User
-  <i class="fas fa-user-circle" style="font-size:15px;"></i>
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li style="font-size:11px;"><a href="#">Profile</a></li>
-    <li style="font-size:11px;"><a href="#">Logout</a></li> </ul>
-</div>
-</div>
-<a class="navbar-brand" href="index.html"><img src="image/logo.png" alt="Image"  style="width:30%;"> </img></a>
-  <a class="a" href="#news">Home</a>
-  <a class="a" href="#news">Daftar Lelang</a>
-  <a class="a" href="#contact">Product Lelang</a>
-  <a  class="a"href="#about">Review</a>
-  
-  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
-  </a>
-</div>
+<?php
+  header_s();
+?>
 
 
 <div class="container" style="height:430px;"> 

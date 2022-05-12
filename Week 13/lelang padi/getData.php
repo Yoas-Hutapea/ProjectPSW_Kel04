@@ -30,7 +30,7 @@ if($insertData){
   echo "<script>alert('Berhasil Registrasi'); </script>"; 
   header("Location:login.php");
 } else {
-  echo "Ada yang salah!";
+  echo "Something went wrong!";
 }
 }
  
