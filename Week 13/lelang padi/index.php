@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <title>Website &mdash; Lelang Padi</title>
-  <meta charset="utf-8">
-  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/style.css">
+  <!DOCTYPE html>
+  <html lang="en">
 
-</head>
+  <head>
+    <title>Website &mdash; Lelang Padi</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
 
 <body style="background-image: url(image/bgpadi.jpg); background-size: cover; background-repeat: no-repeat;">
 
@@ -46,7 +47,7 @@
                   <a href="home.php" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black"> Home </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Daftar Product Lelang</a>
+                  <a href="daftar.php" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Daftar Product Lelang</a>
                 </li>                                
                 <li>
                   <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Product Lelang</a>

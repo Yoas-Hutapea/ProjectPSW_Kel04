@@ -7,8 +7,9 @@
   <body>
   <div class="login-page">
   <div class="form" style="border-radius:10px;">
-    <form class="login-form">
+    <form form method="POST" action="/lelang padi/home.php" class="login-form">
         <h2>Login</h2>
+      <input name="tujuan" type="hidden" value="LOGIN" >
       <input type="email" placeholder="Email" required style="border-radius:30px;"/>
       <input type="password" placeholder="password" required style="border-radius:30px;"/>
       <button>login</button>

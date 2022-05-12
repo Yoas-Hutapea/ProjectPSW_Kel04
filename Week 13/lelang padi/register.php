@@ -22,6 +22,7 @@ $roles = mysqli_query($koneksi,$query);
   <div class="form" style="border-radius:10px;">
     <form class="login-form" method="POST" action="getData.php" id="form">
       <h2>Register Here</h2>
+      <input name="tujuan" type="hidden" value="DAFTAR" >
       <input type="text"required placeholder="Nama Lengkap" name="nama"
                       oninvalid="this.setCustomValidity('Masukkan nama anda')"
                       oninput="this.setCustomValidity('')"style="border-radius:30px;"/>
