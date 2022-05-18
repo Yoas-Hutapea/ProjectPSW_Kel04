@@ -10,6 +10,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
   <link rel="stylesheet" href="fonts/icomoon/style.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/jquery-ui.css">
@@ -139,44 +141,45 @@ float:right;
 <div class="form">
   <fieldset>
     <article>
-      <a class="gambar1"> <img src="image/logo.png"> </a> </img>
+      <a class="gambar1"> <img src="image/bulir-padi.jpg"> </a> </img>
     </article>
 
     <aside>
-    <form>
+    <form action="" method="post">
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
+    <label  class="col-sm-2 col-form-label">Nama Padi:</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="namapadi" placeholder="namapadi" required><br><br>
+      <input class="form-control" type="text" name="nama_padi" required><br><br>
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Komentar:</label>
   <div class="col-sm-10">
-    <textarea class="form-control" id="deskripsi" rows="3"></textarea><br><br><br>
+    <textarea class="form-control" type="text" name="komentar" rows="3"required></textarea><br><br><br>
   </div>
 </div>
   <div class="form-group row">
-    <label for="inputEmail3" class="col-sm-2 col-form-label">Rating</label><br><br><br>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <div class="col-sm-10">
-    </div>
-  </div>
-  <div class="button">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary btn-lg">Kirim</button>
-    </div>
-  </div>
+    <label class="col-sm-2 col-form-label">Rating</label><br><br><br>
+    <div class="rateyo" id = "rating">
+            data-rateyo-rating="4"
+            data-rateyo-num-stars="5"
+            data-rateyo-score="3">
+        </div>
+        <span class='result'>0</span>
+            <input type="hidden" name="rating">
+        <div class="col-sm-10">
+        </div>
+        </div>
+         <div class="button">
+        <div class="col-sm-10">
+            <button type="submit" name="proses" class="btn btn-primary btn-lg">Kirim</button>
+       </div>
+       </div>
 </form>
     </aside>
 
   </fieldset>
 </div>
-
 
 <footer> 
 <div class="container">
@@ -195,4 +198,34 @@ float:right;
 </div>
 </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+<script>
+
+
+    $(function () {
+        $(".rateyo").rateYo().on("rateyo.change", function (e, data) {
+            var rating = data.rating;
+            $(this).parent().find('.score').text('score :'+ $(this).attr('data-rateyo-score'));
+            $(this).parent().find('.result').text('rating :'+ rating);
+            $(this).parent().find('input[nam=rating]').val(rating); //add rating value to input field
+        });
+    });
+
+</script>
+</body>
+</html>
+<?php
+require 'db_connection.php';
+if ($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    $nama_padi = $_POST["nama_padi"];
+    $komentar = $_POST["komentar"];
+    $rating = $_POST["rating"];
+
+    $sql = "INSERT INTO ratee (nama_padi,komentar,rating) VALUES ('$nama_padi','$komentar','$rating')";
+    if (mysqli_query($conn, $sql))
+    mysqli_close($conn);
+}
+?>
 
