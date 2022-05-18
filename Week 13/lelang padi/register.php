@@ -72,12 +72,7 @@ $roles = mysqli_query($koneksi,$query);
       <script src="js/jquery.fancybox.min.js"></script>
       <script src="js/jquery.sticky.js"></script>
       <script src="js/jquery.mb.YTPlayer.min.js"></script>
-      <script src="js/main.js"></script>
-
-
-
-      
-      
+      <script src="js/main.js"></script>     
     </body>
     <script>
   $(document).ready(function () {

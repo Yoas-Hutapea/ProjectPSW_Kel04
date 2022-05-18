@@ -1,54 +1,52 @@
 <?php
 session_start();
+
 include 'connect.php';
 require_once("function.php");
+
+$id = $_SESSION['id'];
+$nama = $_SESSION['name'];
+
 ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-  <title>Website &mdash; Lelang Padi</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-  <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
-	<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+	<meta charset="UTF-8">
+	<title>Website &mdash; Lelang Padi</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  	<link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+	<!-- Css -->
+	<link rel="stylesheet" href="css/owl.theme.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
 
-.topnav {
-  overflow: hidden;
+
+	<!-- jS -->
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="js/main.js" type="text/javascript"></script>
+
+
+	<style>
+
+.container{
+  border-color:black;
+}
+.header {
   background-color: #F9F3D3;
   padding:20px;
 }
+footer{
+  overflow: hidden;
+  background-color: #F9F3D3;
+  padding: 20px;
+}
 
-.topnav .a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+.header .a {
   color: black;
   text-align: center;
   padding: 9px;
@@ -62,103 +60,39 @@ body {
   margin-left:20px;
   margin-right:20px;
 }
-.topnav .right {
-float:right;   
-}
-.container{
-  margin-left:40px;
-  margin-right:40px;
-
-}
-/* Dropdown Button */
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-.topnav .a:hover {
+.header .a:hover {
   background-color: #FCB346;
   color: white;
 }
 
-.topnav .a.active {
+.header a.active {
   background-color: #FCB346;
   color: white;
 }
 
-.topnav .icon {
-  display: none;
+.header-center {
+  display: flex;
+   justify-content: center;
+       
+}
+.header-right {
+float:right;    
+}
+.header a.logo {
+  float:left;
 }
 
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: left;
-    display: block;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
+@media screen and (max-width: 500px) {
+  .header a {
     float: none;
     display: block;
     text-align: left;
-    border-radius: 0px;
   }
-  .topnav.responsive .navbar-brand{
-    display:none;
-  }
-}
-@media screen and (max-width: 600px) {
-  .cd {
-    display: none;
+  
+  .header-center {
+    float: none;
   }
 }
-
-
-
-
   </style>	
 
 </head>
@@ -167,26 +101,47 @@ float:right;
 
 <!-- TOP HEADER Start
     ================================================== -->
-<div class="container">	
-	<?php
-if($_SESSION["role_id"] == '1'){
-  header_s();
-};
-if($_SESSION["role_id"] == '2'){
-  header_t();
-};
-?>
-<br>
-<br>
-<br>
-<br>
+  <div class="container">
+      <div class="header"><br>
+        <a class="logo"href="index.php"> <img src="image/logo.png" alt="Image"  style="width:30%;"> </a> </img>
+          <div class="header-right">
+            <div class="btn-group">
+              <button type="button" class="btn btn-warning dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Profil
+                <i class="fas fa-user-circle" style="font-size:15px;"></i>
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Edit Profil</a></li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+              </div>
+          </div>
+        <div class="header-center">
+          <a class="a active" href="home.php">Home</a>
+          <a class="a" href="penawaran.php">Daftar Produk Lelang</a>
+          <a class="a" href="add_lelang.php">Produk Lelang</a>
+          <a class="a" href="look_review.php">Review</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
 <br>
 	<!-- End Of /.Container -->
+<br>
 
+	<!-- End Of /.Container -->
 <!-- Username display start -->
-	<div class="container-fluid">
-	 <?php echo $_SESSION['name']?>
-	</div> 
+<div class="container-fluid">
+		<div class="alert alert-warning alert-dismissible fade show" role="alert">
+
+    <?php echo "<h4>Selamat Datang, " . $_SESSION['name'] ."!". "</h4>"; ?> 
+ 			
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    				<span aria-hidden="true">&times;</span>
+  				</button>
+		</div>
+	</div> <br>
 <!-- Username display End -->
 
 <!-- About website brief start -->
@@ -249,7 +204,7 @@ if($_SESSION["role_id"] == '2'){
     <h5 class="card-title">Mulai Lelang</h5>
     <img src="image/6.JPG" class="card-img-top" alt="Card image cap ">
     <p class="card-text"><b>Produk Lelang</b> menampilkan padi yang kamu tawar dengan harga yang telah kamu masukkan, dan menunggu pemenang dari lelang tersebut.</p>
-    <a href="#" class="card-link">Click Here</a>
+    <a href="penawaran.php" class="card-link">Click Here</a>
   </div>
 </div>
     </div>
@@ -259,7 +214,7 @@ if($_SESSION["role_id"] == '2'){
     <h5 class="card-title">Daftar Produk Lelang</h5>
     <img src="image/5.JPG" class="card-img-top" alt="Card image cap">
     <p class="card-text"><b>Daftar Produk Lelang</b> menampilkan padi-padi yang terbaik di daerah TOBASA yang siap untuk kamu tawar dengan harga buka yang ditentukan.</p>
-    <a href="daftar_product.php" class="card-link">Click Here</a>
+    <a href="penawaran.php" class="card-link">Click Here</a>
   </div>
 </div>
     </div>
@@ -278,7 +233,7 @@ if($_SESSION["role_id"] == '2'){
 	<div class="card border-dark mb-3" style="max-width: 18rem;">
   	<div class="card-header">11321045 - Yoas S.M Hutapea</div>
   	<div class="card-body text-dark">
-  	<img src="image/team-4.JPG" alt="..." class="img-thumbnail">
+  	<img src="image/yoas.jpeg" alt="..." class="img-thumbnail">
   	</div>
 	</div>
 </div>
@@ -306,7 +261,7 @@ if($_SESSION["role_id"] == '2'){
 	<div class="card border-dark mb-3" style="max-width: 18rem;">
   	<div class="card-header">11321001 - Krisna Saragih</div>
   	<div class="card-body text-dark">
-  	<img src="image/team-4.JPG" alt="..." class="img-thumbnail">
+  	<img src="image/krisna.jpeg" alt="..." class="img-thumbnail">
   	</div>
 	</div>
 </div>
@@ -314,7 +269,7 @@ if($_SESSION["role_id"] == '2'){
 	<div class="card border-dark mb-3" style="max-width: 18rem;">
   	<div class="card-header">11321062 - Olyvia Siahaan</div>
   	<div class="card-body text-dark">
-	  <img src="image/team-3.JPG" alt="..." class="img-thumbnail">
+	  <img src="image/olip.jpeg" alt="..." class="img-thumbnail">
   	</div>
 	</div>
     </div>
@@ -335,15 +290,26 @@ if($_SESSION["role_id"] == '2'){
 <br>
 <!-- Footer End -->
 
-<?php
-footer_y();
-?>
+<footer> 
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <p style="margin-top:20px;text-align:center;">Copyright © startend 2022 | All right Deserve </p>
+    </div>
+    <div class="col col-lg-2">
+    <a class="social-media-icon" href="https://link_social_mendia_anda"><span class="fab fa-facebook"> Facebook</span></a><br>
+    <a class="social-media-icon" href="https://link_social_mendia_anda"><span class="fab fa-instagram"> Instagram</span></a><br>
+    <a class="social-media-icon" href="https://link_social_mendia_anda"><span class="fab fa-facebook"> Facebook</span></a><br>
+    </div>
+  </div>
+</div>
 </footer>
-<div class="container">	
 
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -43,10 +43,10 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li>
-                  <a href="home.php" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black"> Home </a>
+                  <a href="index.php" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black"> Home </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Daftar Product Lelang</a>
+                  <a href="penawar.php" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Daftar Product Lelang</a>
                 </li>                                
                 <li>
                   <a href="#" class="nav-link text-left" style="font-size:20px;font-weight:bold;color:black">Product Lelang</a>
