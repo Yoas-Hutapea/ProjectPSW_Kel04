@@ -112,9 +112,9 @@ float:right;
                   <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Edit Profil</a></li>
                     <li><a class="dropdown-item" href="#">Logout</a></li>
-              </div>
+            </div>
           </div>
-        <div class="header-center">
+      <div class="header-center">
           <a class="a active" href="home.php">Home</a>
           <a class="a" href="penawaran.php">Daftar Produk Lelang</a>
           <a class="a" href="add_lelang.php">Produk Lelang</a>
